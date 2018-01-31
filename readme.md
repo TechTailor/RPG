@@ -105,7 +105,7 @@ Well that should be enough to get you up and running in no time.
 
 ## Demo Site
 
-You can check out the live demo of this package at https://gits.moinuddin.info/rpg
+You can check out the live demo of this package at https://rpg.gits.moinuddin.info
 
 ## Changelog
 
