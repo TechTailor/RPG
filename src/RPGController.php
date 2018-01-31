@@ -88,6 +88,6 @@ class RPGController extends Controller
 			$characters = 'luds';
 		}
 
-		return $this->new($characters, $size, $dashes);
+		return $this->Generate($characters, $size, $dashes);
 	}
 }
