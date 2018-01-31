@@ -9,16 +9,22 @@
             "email": "hello@moinuddin.info"
         }
     ],
+    "repositories": [
+        {
+        "type": "git",
+        "url":  "git@github.com:TechTailor/RPG.git"
+        }
+    ],
     "minimum-stability": "dev",
     "require": {},
     "extra": {
-		"laravel": {
-			"providers": [
-				"TechTailor\\RPG\\RPGServiceProvider"
-			],
-			"aliases": {
-				"RPG": "TechTailor\\RPG\\Facades\\RPG"
-			}
-		}
-	}
+        "laravel": {
+            "providers": [
+                "TechTailor\\RPG\\RPGServiceProvider"
+            ],
+            "aliases": {
+                "RPG": "TechTailor\\RPG\\Facades\\RPG"
+            }
+        }
+    }
 }
