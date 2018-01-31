@@ -23,7 +23,7 @@
                 "TechTailor\\RPG\\RPGServiceProvider"
             ],
             "aliases": {
-                "RPG": "TechTailor\\RPG\\Facades\\RPG"
+                "RPG": "TechTailor\\RPG\\Facade"
             }
         }
     }
