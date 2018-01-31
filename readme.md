@@ -103,7 +103,11 @@ Details of each preset -
 ```
 Well that should be enough to get you up and running in no time. 
 
-### Changelog
+## Demo Site
+
+You can check out the live demo of this package at https://gits.moinuddin.info/rpg
+
+## Changelog
 
 Please see [CHANGELOG](changelog.md) for more information what has changed recently.
 
