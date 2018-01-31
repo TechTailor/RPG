@@ -7,12 +7,7 @@ use Carbon\Carbon;
 
 class RPGController extends Controller
 {
-	public function index()
-	{
-		echo Carbon::now()->toDateTimeString();
-	}
-
-	public function new($characters, $size, $dashes)
+	public function Generate($characters, $size, $dashes)
 	{
 		$sets = array();
 
@@ -63,7 +58,7 @@ class RPGController extends Controller
 
 	}
 
-	public function preset($preset)
+	public function Preset($preset)
 	{
 		if($preset == 1)
 		{
