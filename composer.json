@@ -10,5 +10,15 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "extra": {
+		"laravel": {
+			"providers": [
+				"TechTailor\\RPG\\RPGServiceProvider"
+			],
+			"aliases": {
+				"RPG": "TechTailor\\RPG\\Facades\\RPG"
+			}
+		}
+	}
 }
