@@ -9,12 +9,11 @@
             "email": "hello@moinuddin.info"
         }
     ],
-    "repositories": [
-        {
-        "type": "git",
-        "url":  "git@github.com:TechTailor/RPG.git"
+    "autoload": {
+        "psr-4": {
+            "TechTailor\\RPG\\": "src/"
         }
-    ],
+    },
     "minimum-stability": "dev",
     "require": {},
     "extra": {
