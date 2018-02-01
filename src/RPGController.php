@@ -7,6 +7,40 @@ use Carbon\Carbon;
 
 class RPGController extends Controller
 {
+	
+	public function Preset($preset)
+	{
+		if($preset == 1)
+		{
+			$size = 8;
+			$dashes = 0;
+			$characters = 'ld';
+		}
+
+		else if($preset == 2)
+		{
+			$size = 8;
+			$dashes = 0;
+			$characters = 'lud';
+		}
+
+		else if($preset == 3)
+		{
+			$size = 12;
+			$dashes = 0;
+			$characters = 'luds';
+		}
+
+		else if($preset == 4)
+		{
+			$size = 16;
+			$dashes = 1;
+			$characters = 'luds';
+		}
+
+		return $this->Generate($characters, $size, $dashes);
+	}
+
 	public function Generate($characters, $size, $dashes)
 	{
 		$sets = array();
@@ -39,55 +73,27 @@ class RPGController extends Controller
 			
 		$password = str_shuffle($password);
 			
-		if(!$dashes)
+		if($dashes==0)
 			return $password;
-			
+
+		else if($dashes==1)
+			return $this->addDashes($size,$password);
+	}
+
+	protected static function addDashes($size,$password)
+	{
 		$dash_len = floor(sqrt($size));
 			
-		$dash_str = '';
+		$final_str = '';
 			
 		while(strlen($password) > $dash_len)
 		{
-			$dash_str .= substr($password, 0, $dash_len) . '-';
+			$final_str .= substr($password, 0, $dash_len) . '-';
 			$password = substr($password, $dash_len);
 		}
 			
-		$dash_str .= $password;
-			
-		return $dash_str;
+		$final_str .= $password;
 
-	}
-
-	public function Preset($preset)
-	{
-		if($preset == 1)
-		{
-			$size = 8;
-			$dashes = 0;
-			$characters = 'ld';
-		}
-
-		else if($preset == 2)
-		{
-			$size = 8;
-			$dashes = 0;
-			$characters = 'lud';
-		}
-
-		else if($preset == 3)
-		{
-			$size = 12;
-			$dashes = 0;
-			$characters = 'luds';
-		}
-
-		else if($preset == 4)
-		{
-			$size = 16;
-			$dashes = 1;
-			$characters = 'luds';
-		}
-
-		return $this->Generate($characters, $size, $dashes);
+		return $final_str;
 	}
 }
