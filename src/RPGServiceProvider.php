@@ -23,6 +23,6 @@ class RPGServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('rpg','\TechTailor\RPG\RPGController');
+        $this->app->bind('rpg', '\TechTailor\RPG\RPGController');
     }
 }

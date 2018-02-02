@@ -1,99 +1,90 @@
-<?php 
+<?php
 
 namespace TechTailor\RPG;
 
 use App\Http\Controllers\Controller;
-use Carbon\Carbon;
 
 class RPGController extends Controller
 {
-	
-	public function Preset($preset)
-	{
-		if($preset == 1)
-		{
-			$size = 8;
-			$dashes = 0;
-			$characters = 'ld';
-		}
+    public function Preset($preset)
+    {
+        if ($preset == 1) {
+            $size = 8;
+            $dashes = 0;
+            $characters = 'ld';
+        } elseif ($preset == 2) {
+            $size = 8;
+            $dashes = 0;
+            $characters = 'lud';
+        } elseif ($preset == 3) {
+            $size = 12;
+            $dashes = 0;
+            $characters = 'luds';
+        } elseif ($preset == 4) {
+            $size = 16;
+            $dashes = 1;
+            $characters = 'luds';
+        }
 
-		else if($preset == 2)
-		{
-			$size = 8;
-			$dashes = 0;
-			$characters = 'lud';
-		}
+        return $this->Generate($characters, $size, $dashes);
+    }
 
-		else if($preset == 3)
-		{
-			$size = 12;
-			$dashes = 0;
-			$characters = 'luds';
-		}
+    public function Generate($characters, $size, $dashes)
+    {
+        $sets = [];
 
-		else if($preset == 4)
-		{
-			$size = 16;
-			$dashes = 1;
-			$characters = 'luds';
-		}
+        if (strpos($characters, 'l') !== false) {
+            $sets[] = 'abcdefghjkmnpqrstuvwxyz';
+        }
 
-		return $this->Generate($characters, $size, $dashes);
-	}
+        if (strpos($characters, 'u') !== false) {
+            $sets[] = 'ABCDEFGHJKMNPQRSTUVWXYZ';
+        }
 
-	public function Generate($characters, $size, $dashes)
-	{
-		$sets = array();
+        if (strpos($characters, 'd') !== false) {
+            $sets[] = '123456789';
+        }
 
-		if(strpos($characters, 'l') !== false)
-			$sets[] = 'abcdefghjkmnpqrstuvwxyz';
+        if (strpos($characters, 's') !== false) {
+            $sets[] = '!@#$%&*?';
+        }
 
-		if(strpos($characters, 'u') !== false)
-			$sets[] = 'ABCDEFGHJKMNPQRSTUVWXYZ';
+        $all = '';
+        $password = '';
 
-		if(strpos($characters, 'd') !== false)
-			$sets[] = '123456789';
+        foreach ($sets as $set) {
+            $password .= $set[array_rand(str_split($set))];
+            $all .= $set;
+        }
 
-		if(strpos($characters, 's') !== false)
-			$sets[] = '!@#$%&*?';
+        $all = str_split($all);
 
-		$all = '';
-		$password = '';
+        for ($i = 0; $i < $size - count($sets); $i++) {
+            $password .= $all[array_rand($all)];
+        }
 
-		foreach($sets as $set)
-		{
-			$password .= $set[array_rand(str_split($set))];
-			$all .= $set;
-		}
-			
-		$all = str_split($all);
-			
-		for($i = 0; $i < $size - count($sets); $i++)
-			$password .= $all[array_rand($all)];
-			
-		$password = str_shuffle($password);
-			
-		if($dashes==0)
-			return $password;
+        $password = str_shuffle($password);
 
-		else if($dashes==1)
-			return $this->addDashes($size,$password);
-	}
+        if ($dashes == 0) {
+            return $password;
+        } elseif ($dashes == 1) {
+            return $this->addDashes($size, $password);
+        }
+    }
 
-	protected static function addDashes($size,$password)
-	{
-		$dash_len = floor(sqrt($size));
-			
-		$final_str = '';
-			
-		while(strlen($password) > $dash_len)
-		{
-			$final_str .= substr($password, 0, $dash_len) . '-';
-			$password = substr($password, $dash_len);
-		}
-			
-		$final_str .= $password;
+    protected static function addDashes($size, $password)
+    {
+        $dash_len = floor(sqrt($size));
 
-		return $final_str;
-	}
+        $final_str = '';
+
+        while (strlen($password) > $dash_len) {
+            $final_str .= substr($password, 0, $dash_len).'-';
+            $password = substr($password, $dash_len);
+        }
+
+        $final_str .= $password;
+
+        return $final_str;
+    }
 }
