@@ -112,6 +112,14 @@ You can check out the live demo of this package at https://rpg.gits.moinuddin.in
 
 Please see [CHANGELOG](changelog.md) for more information what has changed recently.
 
+## TODO
+
+List of features or additional functionality we are working on (in no particular order) -
+
+```bash
+* Adding Encryption so that passwords/strings generated using RPG are automatically encrypted.
+```
+
 ## Contributing
 
 Please see [CONTRIBUTING](contributing.md) for details.
