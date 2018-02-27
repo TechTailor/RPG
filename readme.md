@@ -101,6 +101,9 @@ Details of each preset -
  Preset - 4
  //Character Set = 'luds' //Size = 16  //Dashes = 1 (Dashes Allowed)
  //Sample Result: 1Z2h-F&?C-x$Tg-KEA8
+ Preset - 5
+ //Character Set = 'luds' //Size = 32  //Dashes = 1 (Dashes Allowed)
+ //Sample Result: 1Z2h-F&?C-x$Tg-KEA8-a2E3-E$#e-@#we-12@2
 ```
 Well that should be enough to get you up and running in no time. 
 
