@@ -24,6 +24,10 @@ class RPGController extends Controller
             $size = 16;
             $dashes = 1;
             $characters = 'luds';
+        } elseif ($preset == 5) {
+            $size = 32;
+            $dashes = 1;
+            $characters = 'luds';
         }
 
         return $this->Generate($characters, $size, $dashes);
