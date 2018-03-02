@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 
 class RPGController extends Controller
 {
-    public function Preset($preset)
+    public function Preset($preset, $encrypt = 0)
     {
         if ($preset == 1) {
             $size = 8;
@@ -30,10 +30,10 @@ class RPGController extends Controller
             $characters = 'luds';
         }
 
-        return $this->Generate($characters, $size, $dashes);
+        return $this->Generate($characters, $size, $dashes, $encrypt);
     }
 
-    public function Generate($characters, $size, $dashes)
+    public function Generate($characters, $size, $dashes, $encrypt = 0)
     {
         $sets = [];
 
@@ -69,11 +69,13 @@ class RPGController extends Controller
 
         $password = str_shuffle($password);
 
-        if ($dashes == 0) {
-            return $password;
-        } elseif ($dashes == 1) {
-            return $this->addDashes($size, $password);
-        }
+        if($dashes)
+            $password = $this->addDashes($size, $password);
+
+        if($encrypt)
+            $password = encrypt($password);
+
+        return $password;
     }
 
     protected static function addDashes($size, $password)
