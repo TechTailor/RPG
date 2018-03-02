@@ -93,4 +93,11 @@ class RPGController extends Controller
 
         return $final_str;
     }
+
+    public function Decrypt($encrypted)
+    {
+        $decrypted = decrypt($encrypted);
+        
+         return $decrypted;
+    }
 }
