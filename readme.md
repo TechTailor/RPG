@@ -118,6 +118,9 @@ Details of each preset -
  //Character Set = 'luds' //Size = 32  //Dashes = 1 (Dashes Allowed)
  //Sample Result: 1Z2h-F&?C-x$Tg-KEA8-a2E3-E$#e-@#we-12@2
 ```
+### Important Note
+The passwords are encrypted using the Laravel App Key (which can be found in your .env file). If you change/modify your Laravel App Key, you will no longer be able to decrypt any previously encrypted strings.
+
 Well that should be enough to get you up and running in no time. 
 
 ## Demo Site
