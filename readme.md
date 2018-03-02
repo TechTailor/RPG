@@ -136,7 +136,7 @@ Please see [CHANGELOG](changelog.md) for more information what has changed recen
 List of features or additional functionality we are working on (in no particular order) -
 
 ```bash
-* Adding Encryption so that passwords/strings generated using RPG are automatically encrypted.
+Nothing on the TODO List.
 ```
 
 ## Contributing
