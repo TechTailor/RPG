@@ -54,7 +54,7 @@ use TechTailor\RPG\Facade\RPG;
 The ``Generate`` method allows you to pass custom specifications for the generator. 
 
 ```php
- RPG::Generate($character, $size, $dashes)
+ RPG::Generate($character, $size, $dashes, $encrypt);
 ```
 Lets go into a bit detail about each of the specifications that can be provided
 
@@ -73,19 +73,32 @@ $size
 //Ex : 15 - will generate a string of total 15 characters using the character set your selected
 ```
 ```bash
-$dashes
+$dashes (defaults to 0)
 //Two options - 0 or 1
 //Using '1' - will add multiple dashes (-) randomly within the string generated.
+```
+```bash
+$encrypt (defaults to 0)
+//Two options - 0 or 1
+//Using '1' - will return you an encrypted version of the password. Can be decrypted using RPG::Decrypt.
 ```
 Example command for generating a password string of 16 characters with dashes using the 'lud (lowercase, uppercase, digits)' character set -
 ```bash
 return RPG::Generate('lud',16,1); //Result: 37vX-zerT-weSa-vCC3
 ```
+Example command for generating an encrypted password string of 16 characters with dashes using the 'lud (lowercase, uppercase, digits)' character set -
+```bash
+return RPG::Generate('lud',16,1,1); 
 
-The ``Preset`` method allows you to instantly select from any of the 4 preset specifications for the generator. 
+//Result: eyJpdiI6IjdTK3ZmMGZXNXl2a2xQSU1sNVhKZEE9PSIsInZhbHVlIjoiK1NxcTdUbVF3Q2dqSGVcL0JFKzRHR3VWNm5NWUdUNDY0dEFnOFN0S2JDdVk9IiwibWFjIjoiODEwMjIwOTBiNjBiOWRhMjJlNTliNGY0NzEyNDFjNmJkODIwZmFhMjMyY2IzOThkMzRmMTcyZGZkMjk1ZmUwYiJ9
+```
+
+The ``Preset`` method allows you to instantly select from any of the 4 preset specifications for the generator. You can also ad the encrypt modifier to the Preset method aswell for returning an encrypted Preset String.
 
 ```php
- RPG::Preset($preset) //Where $preset value can be 1, 2, 3 or 4.
+ RPG::Preset($preset); //Where $preset value can be 1, 2, 3 or 4.
+ or
+ RPG::Preset($preset,1); // For encrypting the result before returning it.
 ```
 Details of each preset -
 ```bash

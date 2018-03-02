@@ -33,7 +33,7 @@ class RPGController extends Controller
         return $this->Generate($characters, $size, $dashes, $encrypt);
     }
 
-    public function Generate($characters, $size, $dashes, $encrypt = 0)
+    public function Generate($characters, $size, $dashes = 0, $encrypt = 0)
     {
         $sets = [];
 
@@ -97,7 +97,7 @@ class RPGController extends Controller
     public function Decrypt($encrypted)
     {
         $decrypted = decrypt($encrypted);
-        
+
          return $decrypted;
     }
 }
