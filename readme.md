@@ -49,7 +49,7 @@ In order to use the included RPG Facade, import the following in your file
 use TechTailor\RPG\Facade\RPG;
 ```
 
-### The RPG Facade comes with two basic methods - ``Generate`` and ``Preset``
+### The RPG Facade comes with three basic methods - ``Generate``, ``Preset`` and ``Decrypt``
 
 The ``Generate`` method allows you to pass custom specifications for the generator. 
 
@@ -118,6 +118,13 @@ Details of each preset -
  //Character Set = 'luds' //Size = 32  //Dashes = 1 (Dashes Allowed)
  //Sample Result: 1Z2h-F&?C-x$Tg-KEA8-a2E3-E$#e-@#we-12@2
 ```
+
+The ``Decrypt`` method allows you to decrypt any string/password encrypted by passing the encrypt modifier to the Generate or Preset method. Note : Only passwords encrypted by your laravel app can be decrypted.
+
+```php
+ return RPG::Decrypt($encrypted);
+ ```
+ 
 ### Important Note
 The passwords are encrypted using the Laravel App Key (which can be found in your .env file). If you change/modify your Laravel App Key, you will no longer be able to decrypt any previously encrypted strings.
 
