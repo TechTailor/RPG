@@ -1,4 +1,4 @@
-# Random Password Generator for Laravel 5
+# Random Password Generator for Laravel 5, 6 & 7
 
 
 [![GitHub release](https://img.shields.io/github/release/techtailor/rpg.svg?style=for-the-badge&&colorB=7E57C2)](https://packagist.org/packages/techtailor/rpg)
