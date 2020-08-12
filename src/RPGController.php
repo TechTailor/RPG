@@ -69,11 +69,13 @@ class RPGController extends Controller
 
         $password = str_shuffle($password);
 
-        if($dashes)
+        if ($dashes) {
             $password = $this->addDashes($size, $password);
+        }
 
-        if($encrypt)
+        if ($encrypt) {
             $password = encrypt($password);
+        }
 
         return $password;
     }
@@ -98,6 +100,6 @@ class RPGController extends Controller
     {
         $decrypted = decrypt($encrypted);
 
-         return $decrypted;
+        return $decrypted;
     }
 }
