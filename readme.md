@@ -1,4 +1,4 @@
-# Random Password Generator for Laravel 5, 6 & 7
+![](https://banners.beyondco.de/Random%20Password%20Generator.png?theme=light&packageName=TechTailor%2FRPG&pattern=topography&style=style_2&description=Generate+random+configurable+strings+to+be+used+as+passwords.&md=1&fontSize=100px&images=lock-closed)
 
 
 [![GitHub release](https://img.shields.io/github/release/techtailor/rpg.svg?style=for-the-badge&&colorB=7E57C2)](https://packagist.org/packages/techtailor/rpg)
