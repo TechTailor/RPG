@@ -1,6 +1,6 @@
 {
     "name": "techtailor/rpg",
-    "description": "Random Password Generator for Laravel 5",
+    "description": "Random Password Generator for Laravel",
     "type": "laravel",
     "license": "MIT",
     "authors": [
