@@ -5,7 +5,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/TechTailor/RPG.svg?style=for-the-badge)](https://github.com/TechTailor/RPG/issues)
 <img src="https://img.shields.io/badge/StyleCI-passed-green.svg?style=for-the-badge&&colorB=FF69B4">
 [![Software License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge&&colorB=F27E40)](license.md)
-[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/TechTailor/RPG.svg?style=for-the-badge)]()
+[![Total Downloads](https://img.shields.io/packagist/dt/techtailor/rpg.svg?style=for-the-badge)](https://packagist.org/packages/techtailor/rpg)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/TechTailor/RPG.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FTechTailor%2FRPG)
 
 This package is a simple Laravel untility that allows you to generate complex passwords using a simple Facade.
