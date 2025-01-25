@@ -132,7 +132,7 @@ Well that should be enough to get you up and running in no time.
 
 ## Demo Site
 
-You can check out the live demo of this package at [Currently Unavailable]
+You can check out the live demo of this package at [rpg.gits.moinuddin.dev](https://rpg.gits.moinuddin.dev)
 
 ## Changelog
 
